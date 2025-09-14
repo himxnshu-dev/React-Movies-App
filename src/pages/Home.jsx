@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
+import '../css/Home.css'
 import {useState} from "react";
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="search-form">
         <input
           type="text"
           placeholder="Search for movies..."
@@ -27,10 +28,11 @@ const Home = () => {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="search-btn">
           Search
         </button>
       </form>
+
       <div className="movies-grid">
         {movies.map(
           (movie) =>

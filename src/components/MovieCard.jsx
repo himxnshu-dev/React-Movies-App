@@ -1,3 +1,5 @@
+import '../css/MovieCard.css'
+
 function MovieCard({movies}) {
   function onFavoriteLike() {
     alert('CLICKED!')
@@ -7,12 +9,13 @@ function MovieCard({movies}) {
     <div className="movie-card">
       <div className="movie-poster">
         <img src={movies.url} alt={movies.title} />
-        <div>
+        <div className='movie-btn'>
           <button className="favorite-btn" onClick={onFavoriteLike}>
             ♥︎
           </button>
         </div>
       </div>
+      
       <div className="movie-details">
         <h3> {movies.title} </h3>
         <p> {movies.release_year} </p>
